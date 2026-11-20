@@ -12,8 +12,6 @@
 
 同一页面（登录页）的真实渲染对比。品牌名、模型名按设计保持英文，其余界面文案已汉化。
 
-参考 [freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) 的做法：只替换应用的启动界面文件（`resources\renderer\_shell.html`），再挂一个运行时 DOM 汉化脚本。
-
 ## 安装要求
 
 - Windows x64
