@@ -72,6 +72,7 @@ Capy 桌面版的界面是打包在 `resources\renderer` 里的前端资源，�
 CapyZhPatch.ps1       安装器本体（PowerShell）
 capy-zh-cn.js         运行时汉化脚本（词表 + DOM 引擎）
 CHANGELOG.md          更新记录
+tests/                可复现的测试（用法见 tests/README.md）
 ```
 
 ## 免责声明

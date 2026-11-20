@@ -1,10 +1,11 @@
 {
-  "name": "tests",
+  "name": "capy-zh-patch-tests",
   "version": "1.0.0",
-  "description": "补丁自带一套可复现的测试。分两类：**引擎测试**（纯 Node + jsdom，任何机器都能跑）和**浏览器集成测试**（需要本机装了 Capy 与 Chrome）。",
-  "main": "adversarial.test.js",
+  "description": "Capy 中文补丁的引擎与浏览器集成测试",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:engine": "node engine.test.js && node structure.test.js && node adversarial.test.js",
+    "test:perf": "node chunk.test.js && node perf.test.js",
+    "test:browser": "node integration.test.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,6 @@
   "dependencies": {
     "jsdom": "^31.0.1",
     "puppeteer-core": "^25.18.1"
-  }
+  },
+  "private": true
 }

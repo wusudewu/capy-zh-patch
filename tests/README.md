@@ -29,11 +29,11 @@ set CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 运行：
 
 ```bash
+npm run test:engine    # engine + structure + adversarial
+npm run test:perf      # chunk + perf
+
+# 或逐个运行
 node engine.test.js
-node structure.test.js
-node adversarial.test.js
-node chunk.test.js
-node perf.test.js
 ```
 
 ## 浏览器集成测试
@@ -45,6 +45,16 @@ node integration.test.js
 ```
 
 输出最后一行是 `INTEGRATION PASS` 或 `INTEGRATION FAIL`。
+
+## 双击入口测试
+
+三个 `.cmd` 入口（安装 / 还原 / 状态）曾因为参数与脚本不一致而集体失效，因此单独有一条测试：依次执行 状态 → 安装 → 还原 → 安装，用退出码判定（避开控制台编码差异）。结束时补丁处于已安装状态。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File cmd-entries.test.ps1
+```
+
+输出最后一行是 `CMD ENTRY PASS` 或 `CMD ENTRY FAIL`。
 
 ## 安装器测试
 

@@ -7,7 +7,7 @@ if not exist "%~dp0CapyZhPatch.ps1" (
     set "RESULT=2"
     goto :finish
 )
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0CapyZhPatch.ps1" -Action Install -Interactive %*
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0CapyZhPatch.ps1" -Action Install %*
 set "RESULT=%ERRORLEVEL%"
 :finish
 echo.
