@@ -283,17 +283,6 @@
 
   let working = false
   const skipCache = new WeakSet()
-  const INLINE = new Set(['SPAN', 'B', 'STRONG', 'EM', 'SMALL', 'TIME', 'WBR', 'MARK', 'U', 'S', 'I', 'ABBR', 'LABEL', 'SUP', 'SUB', 'FONT', 'A'])
-
-  // 说明：早期版本会整体重写容器的 textContent，用来覆盖「3 threads」这类被 React
-  // 拆成多个节点的文案。这会让 React 维护的 DOM 与虚拟树失去对应，触发
-  // NotFoundError: removeChild / insertBefore，界面直接白屏。现已移除，
-  // 只改写已存在的文本节点与属性，不改变任何节点结构。
-  const COMPOSITE_DISABLED = true
-
-  function translateComposite() {
-    return false
-  }
 
   function translateTextNode(node) {
     const parent = node.parentElement
@@ -366,7 +355,6 @@
     while (node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
         translateAttributes(node)
-        if (!COMPOSITE_DISABLED && translateComposite(node)) continue
         if (node.shadowRoot) translateTree(node.shadowRoot)
       } else translateTextNode(node)
       node = walker.nextNode()
@@ -433,7 +421,6 @@
       while (node) {
         if (node.nodeType === Node.ELEMENT_NODE) {
           translateAttributes(node)
-          translateComposite(node)
         } else {
           translateTextNode(node)
         }

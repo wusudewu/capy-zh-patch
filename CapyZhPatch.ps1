@@ -10,7 +10,6 @@ param(
 
     [switch]$Force,
 
-    [switch]$Interactive,
 
     [switch]$CloseRunningApp,
 

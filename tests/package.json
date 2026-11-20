@@ -1,0 +1,17 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "补丁自带一套可复现的测试。分两类：**引擎测试**（纯 Node + jsdom，任何机器都能跑）和**浏览器集成测试**（需要本机装了 Capy 与 Chrome）。",
+  "main": "adversarial.test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^31.0.1",
+    "puppeteer-core": "^25.18.1"
+  }
+}
