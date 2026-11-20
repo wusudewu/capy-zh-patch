@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Capy 中文补丁的引擎与浏览器集成测试",
   "scripts": {
+    "test": "npm run test:engine && npm run test:perf",
     "test:engine": "node engine.test.js && node structure.test.js && node adversarial.test.js",
     "test:perf": "node chunk.test.js && node perf.test.js",
     "test:browser": "node integration.test.js"

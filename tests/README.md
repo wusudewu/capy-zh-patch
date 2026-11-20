@@ -29,8 +29,10 @@ set CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 运行：
 
 ```bash
-npm run test:engine    # engine + structure + adversarial
-npm run test:perf      # chunk + perf
+npm test               # 引擎 + 结构 + 对抗性 + 分片 + 性能（不需要 Chrome）
+npm run test:engine    # 只跑引擎类
+npm run test:perf      # 只跑分片与性能
+npm run test:browser   # 浏览器集成（需要 Chrome 与本机 Capy）
 
 # 或逐个运行
 node engine.test.js
