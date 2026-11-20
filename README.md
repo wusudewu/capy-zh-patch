@@ -4,6 +4,14 @@
 
 给 Capy 桌面版（Electron）加上简体中文界面。不改动 `app.asar`，不注入网络请求，随时可一键还原。
 
+## 效果
+
+| 汉化前 | 汉化后 |
+| --- | --- |
+| ![汉化前](docs/screenshot-en.png) | ![汉化后](docs/screenshot-zh.png) |
+
+同一页面（登录页）的真实渲染对比。品牌名、模型名按设计保持英文，其余界面文案已汉化。
+
 参考 [freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) 的做法：只替换应用的启动界面文件（`resources\renderer\_shell.html`），再挂一个运行时 DOM 汉化脚本。
 
 ## 安装要求
@@ -12,6 +20,8 @@
 - Capy 桌面版 **0.9.2**（其他版本会被拒绝安装，避免改错文件）
 
 ## 三步安装
+
+> 没有源码也没关系：到 [Releases](https://github.com/wusudewu/capy-zh-patch/releases) 下载 zip，解压后按下面三步走。
 
 1. 退出 Capy，确认托盘图标里也没有残留实例。
 2. 双击 **安装.cmd**。
@@ -73,6 +83,10 @@ CapyZhPatch.ps1       安装器本体（PowerShell）
 capy-zh-cn.js         运行时汉化脚本（词表 + DOM 引擎）
 CHANGELOG.md          更新记录
 tests/                可复现的测试：npm test / npm run test:browser（详见 tests/README.md）
+.github/               Issue 模板与 CI
+docs/                 效果截图
+CONTRIBUTING.md       贡献指南
+LICENSE               MIT 许可证
 ```
 
 ## 免责声明

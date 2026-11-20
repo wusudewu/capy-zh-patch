@@ -1,0 +1,43 @@
+name: 未汉化文案报告
+description: 报告界面上仍为英文（或翻译不当）的文案
+title: "[未汉化] "
+labels:
+  - translation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量提供界面上的**英文原文**和所在页面，截图可选。
+
+        以下内容保持英文是设计使然，不需要报告：
+        - 品牌名（Capy）、模型名、编程语言名、快捷键、命令、路径；
+        - 用户输入、消息正文、代码块、终端输出等用户内容。
+  - type: input
+    id: route
+    attributes:
+      label: 页面 / 路由（如 /、/sign-in、/sign-up、设置页等）
+      placeholder: "/settings/..."
+    validations:
+      required: true
+  - type: textarea
+    id: text
+    attributes:
+      label: 界面上的英文原文（逐条列出，最好注明所在区域，如「顶部菜单」「弹窗标题」）
+      placeholder: |
+        Settings
+        Save
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议译文（可选）
+      description: 不确定的话留空即可，维护者会统一处理。
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      description: 请搜索现有 issue，避免重复提交。
+      options:
+        - label: 我已搜索过，没有重复的 issue
+          required: false
