@@ -52,8 +52,16 @@ node integration.test.js
 
 三个 `.cmd` 入口（安装 / 还原 / 状态）曾因为参数与脚本不一致而集体失效，因此单独有一条测试：依次执行 状态 → 安装 → 还原 → 安装，用退出码判定（避开控制台编码差异）。结束时补丁处于已安装状态。
 
+脚本以自身位置锚定项目根，因此在**任意目录**都能运行。在项目根目录：
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File cmd-entries.test.ps1
+powershell -ExecutionPolicy Bypass -File tests\cmd-entries.test.ps1
+```
+
+在 `tests/` 目录内：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\cmd-entries.test.ps1
 ```
 
 输出最后一行是 `CMD ENTRY PASS` 或 `CMD ENTRY FAIL`。
