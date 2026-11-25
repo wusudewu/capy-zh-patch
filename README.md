@@ -15,7 +15,7 @@
 ## 安装要求
 
 - Windows x64
-- Capy 桌面版 **0.9.2**（其他版本会被拒绝安装，避免改错文件）
+- Capy 桌面版 **0.10.0**（同时兼容 0.9.2；其他版本会被拒绝安装，避免改错文件）
 
 ## 三步安装
 
@@ -48,7 +48,7 @@ Capy 桌面版的界面是打包在 `resources\renderer` 里的前端资源，�
 1. 把 `capy-zh-cn.js` 复制进 `resources\renderer`；
 2. 在 `_shell.html` 的 `</body>` 前插入一行 `<script src="/capy-zh-cn.js" defer></script>`（带 `capy-zh-patch` 标记，便于精确还原）。
 
-汉化脚本在页面加载后遍历 DOM，用约 11000 条词条把界面文案替换成中文，并用 MutationObserver 处理后续渲染出来的内容。它只匹配词表中已有的界面字符串，因此：
+汉化脚本在页面加载后遍历 DOM，用约 14000 条词条把界面文案替换成中文，并用 MutationObserver 处理后续渲染出来的内容。它只匹配词表中已有的界面字符串，因此：
 
 - 用户输入、消息正文、代码块、终端输出、文件内容都保持原文；
 - 品牌名、模型名、编程语言名、快捷键、命令、路径保持英文。
@@ -69,7 +69,7 @@ Capy 桌面版的界面是打包在 `resources\renderer` 里的前端资源，�
 
 ## 更新记录
 
-见 [CHANGELOG.md](CHANGELOG.md)。当前版本 **1.0.1**。
+见 [CHANGELOG.md](CHANGELOG.md)。当前版本 **1.1.0**。
 
 ## 文件清单
 

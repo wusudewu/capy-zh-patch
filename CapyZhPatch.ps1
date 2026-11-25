@@ -20,8 +20,8 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
 
-$PatchVersion = '1.0.1'
-$SupportedAppVersions = @('0.9.2.0', '0.9.2')
+$PatchVersion = '1.1.0'
+$SupportedAppVersions = @('0.10.0.0', '0.10.0', '0.9.2.0', '0.9.2')
 $AssetName = 'capy-zh-cn.js'
 $MarkerStart = '<!-- capy-zh-patch:start -->'
 $MarkerEnd = '<!-- capy-zh-patch:end -->'
